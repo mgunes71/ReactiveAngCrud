@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {map} from "rxjs/operators";
+import {Observable} from "rxjs";
+import {UserModel} from "../models/UserModel";
 
 
 @Injectable({
@@ -30,30 +32,32 @@ export class ApiService {
     );
   };
 
-  deleteUser(id:number){
-    return this.http.delete<any>(this.path + 'posts/'+ id).pipe(
-      map((res:any)=>{
+  deleteUser(id: number) {
+    return this.http.delete<any>(this.path + 'posts/' + id).pipe(
+      map((res: any) => {
         return res
       })
     );
   };
 
-  updateUser(data:any, id:number){
+  updateUser(data: any, id: number) {
     return this.http.put<any>(this.path + 'posts/' + id, data).pipe(
-      map((res:any) => {
+      map((res: any) => {
         return res
       })
     );
   };
 
-  getUserById(id:number){
-    return this.http.get<any>(this.path + 'posts/' + id).pipe(
-      map((res:any)=>{
-        return res
-      })
-    );
-  };
+  // getUserById(id:number){
+  //   return this.http.get<any>(this.path + 'posts/' + id).pipe(
+  //     map((res:any)=>{
+  //       return res
+  //     })
+  //   );
+  // };
+
+  getUserById(userId): Observable<UserModel> {
+    return this.http.get<UserModel>(this.path + "posts/?id=" + userId)
+  }
 
 }
-
-
