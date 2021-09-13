@@ -9,6 +9,10 @@ import {HomeComponent} from './components/home/home.component';
 import {AboutComponent} from './components/about/about.component';
 import {UserComponent} from "./components/user/user.component";
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import { LoginSignComponent } from './components/login-sign/login-sign.component';
+import {UserDetailComponent} from "./components/about/user-detail/user-detail.component";
+
 
 
 @NgModule({
@@ -17,12 +21,15 @@ import {ReactiveFormsModule} from "@angular/forms";
     NavComponent,
     HomeComponent,
     AboutComponent,
-    UserComponent
+    UserComponent,
+    LoginSignComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
   ],
   providers: [],

@@ -8,9 +8,16 @@
       <a class="nav-item nav-link active" routerLink="home" routerLinkActive="active">Home </a>
       <a class="nav-item nav-link active" routerLink="users" routerLinkActive="active">Users</a>
       <a class="nav-item nav-link active" routerLink="about" routerLinkActive="active">About</a>
+      <a class="nav-item nav-link active" routerLink="login" routerLinkActive="active">Login</a>
 
     </div>
   </div>
+  <form class="d-flex">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+    <a *ngIf="isLoggedin()==false" class="nav-link btn-success mx-3" routerLink="login">Login</a>
+    <a *ngIf="isLoggedin()==true" (click)="logOut()" class="nav-link btn-danger mx-3" >Logout</a>
+  </form>
 </nav>
 
 <router-outlet></router-outlet>

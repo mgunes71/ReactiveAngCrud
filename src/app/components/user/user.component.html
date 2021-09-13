@@ -1,11 +1,104 @@
-<nav class="navbar navbar-ligth bg-primary">
+<nav class="navbar navbar-ligth bg-dark">
   <div class="container-fluid">
-    <h1>Crud Angular</h1>
+    <h1 style="color: azure">User Form</h1>
 
     <div class="d-flex">
-      <button (click)="clickAddEmploye()" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+      <button (click)="clickAddEmploye()" type="button" class="btn btn-danger" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Add Employee
+      </button>
     </div>
   </div>
 </nav>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn- btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="reacForm">
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Full Name</label>
+            <input formControlName="fullName" type="text" class="form-control" id="exampleInputEmail2"
+                   aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+          </div>
+
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email ID</label>
+            <input formControlName="email" type="text" class="form-control" id="exampleInputEmail1"
+                   aria-describedby="emailHelp">
+            <div id="emailHelp1" class="form-text"></div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword2" class="form-label">Mobile Number</label>
+            <input formControlName="phone" type="text" class="form-control" id="exampleInputPassword2">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword3" class="form-label">Role</label>
+            <input formControlName="role" type="text" class="form-control" id="exampleInputPassword3">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword4" class="form-label">İmage Url</label>
+            <input formControlName="image_url" type="text" class="form-control" id="exampleInputPassword4">
+          </div>
+
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button id="close" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button (click)="postUserdetails()" *ngIf="showAdd" type="button" class="btn btn-primary">Add</button>
+        <button (click)="updateUser()" *ngIf="showUpdate" type="button" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Full Name</th>
+
+    <th scope="col">Email ad</th>
+    <th scope="col">Mobile no</th>
+    <th scope="col">Role</th>
+
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of userData">
+      <td>{{emp.id}}</td>
+      <td>{{emp.fullName}}</td>
+      <td>{{emp.email}}</td>
+      <td>{{emp.phone}}</td>
+      <td>{{emp.role}}</td>
+
+      <td>
+        <input type="checkbox" id="input">
+      </td>
+<!--      <td> <input  type="checkbox" class="custom-control-input" id="check">-->
+<!--        <label class="custom-control-label mx-3" for="check">Active</label></td>-->
+
+  <td>
+          <button (click)="onEdit(emp)" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-success"style="color: black">Edit</button>
+          <button (click)="deleteUserById(emp.id)" class="btn btn-danger mx-3" style="color: black">Delete</button>
+  </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
 
 
