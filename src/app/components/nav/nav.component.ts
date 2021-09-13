@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AccountLogService} from "../../shared/account-log.service";
 
 @Component({
   selector: 'app-nav',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private acService:AccountLogService) { }
 
   ngOnInit(): void {
   }
+
+  isLoggedin(){
+    return this.acService.isLoggedIn();
+  };
+
+  logOut(){
+    this.acService.logOut();
+  }
+
+
+
 
 }

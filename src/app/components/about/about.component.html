@@ -1,1 +1,18 @@
-<p>about works!</p>
+<div class="row">
+  <div *ngFor="let user of userData" class="col-3">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src="{{user.image_url}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{user.fullName}}</h5>
+        <p class="card-text">{{user.email}}</p>
+        <p class="card-text">{{user.phone}}</p>
+        <p class="card-text">{{user.role}}</p>
+      </div>
+
+      <div class="card-body">
+        <a (click)="userData" routerLink="userDetail" class="card-link">User Detail</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div>
+</div>

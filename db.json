@@ -2,8 +2,27 @@
   "posts": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "fullName": "Murat Gunes",
+      "email": "mgnes95@gmail.com",
+      "phone": "5546610543",
+      "role": "Admin",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG6a6KfKK66Jy1eCuDau7yp2rb5dIfGvl45g&usqp=CAU"
+    },
+    {
+      "fullName": "Okan Tastan",
+      "email": "mokar@hotmail.com",
+      "phone": "5554446642",
+      "role": "User",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG6a6KfKK66Jy1eCuDau7yp2rb5dIfGvl45g&usqp=CAU",
+      "id": 2
+    },
+    {
+      "fullName": "Enes Tanyeli",
+      "email": "ns@hotmail.com",
+      "phone": "5555446622",
+      "role": "User",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG6a6KfKK66Jy1eCuDau7yp2rb5dIfGvl45g&usqp=CAU",
+      "id": 3
     }
   ],
   "comments": [
