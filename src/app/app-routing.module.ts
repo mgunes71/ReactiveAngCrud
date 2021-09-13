@@ -10,7 +10,7 @@ import {UserDetailComponent} from "./components/about/user-detail/user-detail.co
 const routes: Routes = [
   {path: 'home', component:HomeComponent},
   {path: 'about', component:AboutComponent},
-  {path: 'userDetail', component:UserDetailComponent},
+  {path: 'userDetail/:userId', component:UserDetailComponent, canActivate:[LoginUserGuard]},
   {path: 'users', component:UserComponent, canActivate:[LoginUserGuard]},
   {path: 'login', component:LoginSignComponent},
   {path: '**', component:HomeComponent},
